@@ -1,0 +1,53 @@
+//TODO: Change the path to source
+### Add product
+POST http://localhost:8080/api/product/add
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Bearer <token>
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="phone.jpg"
+Content-Type: image/jpeg
+
+< src\main\resources\images\tea-pot.jpg
+--WebAppBoundary
+Content-Disposition: form-data; name="info"; filename="data.json"
+Content-Type: application/json
+
+{
+ "name": "phone",
+ "description": "description about phone",
+ "price": 400,
+ "categoryId": "1f844108-6bf2-4663-b7d2-c80fef833c12"
+}
+--WebAppBoundary--
+
+### Edit product by id
+PUT http://localhost:8080/api/product/edit/2a68207e-eb1d-44be-9633-6193b954cb7b
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Bearer <token>
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="phone2.jpg"
+Content-Type: image/jpeg
+
+< src\main\resources\images\phone2.jpg
+--WebAppBoundary
+Content-Disposition: form-data; name="info"; filename="data.json"
+Content-Type: application/json
+
+{
+ "name": "{{$random.alphabetic(15)}} changed",
+ "description": "{{$random.alphabetic(10)}} changed",
+ "price": {{$random.float(100)}},
+ "categoryId": "1f844108-6bf2-4663-b7d2-c80fef833c12"
+}
+--WebAppBoundary--
+
+
+### Delete your own product by id
+DELETE http://localhost:8080/api/product/deleteMy/2a68207e-eb1d-44be-9633-6193b954cb7b
+Authorization: Bearer <token>
+
+### Delete any product by id only for users with privilage
+DELETE http://localhost:8080/api/product/deleteAny/ce7377ff-3bed-4a51-8efc-2200fba2e76d
+Authorization: Bearer <token>

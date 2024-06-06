@@ -1,0 +1,21 @@
+### Create category
+POST http://localhost:8080/api/category/add
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "name": "Clothes1"
+}
+
+### Edit category
+PUT http://localhost:8080/api/category/edit/89b87987-4ac2-4448-ae4c-be785a5aaf62
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+  "name": "Winter clothes"
+}
+
+### Delete category by id
+DELETE http://localhost:8080/api/category/delete/89b87987-4ac2-4448-ae4c-be785a5aaf62
+Authorization: Bearer <token>

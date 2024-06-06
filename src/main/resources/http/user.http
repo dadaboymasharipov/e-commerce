@@ -1,0 +1,40 @@
+### Edit user by id
+PUT http://localhost:8080/api/user/editUser/{id}
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+  "fullName": "{{$random.alphabetic(10)}}",
+  "password": "{{$random.alphabetic(10)}}",
+  "mobileNumber": "{{$random.integer(10000000, 99999999)}}",
+  "city": "{{$random.alphabetic(10)}}",
+  "district": "{{$random.alphabetic(10)}}",
+  "street": "{{$random.alphabetic(10)}}"
+}
+
+### Delete user by id
+DELETE http://localhost:8080/api/user/deleteUser/{id}
+Authorization: Bearer <token>
+
+### Block user from system
+DELETE http://localhost:8080/api/user/blockUser
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+  "id": "id",
+  "reason": "{{$random.alphabetic(100)}}"
+}
+
+### Unblock User from system
+GET http://localhost:8080/api/user/unblockUser?email={{email}}
+Authorization: Bearer <token>
+
+### Get list of blocked users
+GET http://localhost:8080/api/user/getBlockedUsers?pageNumber=1&pageSize=10
+Authorization: Bearer <token>
+
+### Assign a role to user
+PUT http://localhost:8080/api/user/assignRoleToUser?userId={{userId}}&roleId={{roleId}}
+Authorization: Bearer <token>
+

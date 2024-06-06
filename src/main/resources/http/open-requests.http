@@ -1,0 +1,23 @@
+### Get category info by id
+GET http://localhost:8080/api/open/getCategory/{{id}}
+
+### Get all categories of the system
+GET http://localhost:8080/api/open/getCategories
+
+### Get info about product by id
+GET http://localhost:8080/api/open/getProduct/{{id}}
+
+### Get all products pagination
+GET http://localhost:8080/api/open/getProducts?pageNumber=1&pageSize=10
+
+### Get all products of a user
+GET http://localhost:8080/api/open/getProductsByOwner/{{id}}}?pageNumber=1&pageSize=10
+
+### Get all products of a particular category
+GET http://localhost:8080/api/open/getProductsByCategory/{{id}}?pageNumber=1&pageSize=1
+
+### Get info of a user
+GET http://localhost:8080/api/open/getUser/{{id}}}
+
+### Get all users info by pagination
+GET http://localhost:8080/api/open/getUsers?pageNumber=1&pageSize=10

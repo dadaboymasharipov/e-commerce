@@ -1,0 +1,22 @@
+###Registering to system
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Ali Olimov",
+  "email": "",
+  "password": "A1234567",
+  "mobileNumber": "+121212121",
+  "city": "Tashkent",
+  "district": "Shaykhontokhur",
+  "street": "Labzak 70B"
+}
+
+###Login to system
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "",
+  "password": ""
+}
